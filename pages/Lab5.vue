@@ -20,7 +20,7 @@
         <LTooltip permanent direction = "top">{{ lake.name }}</LTooltip>
         <LPopup>
           <strong>{{ lake.name }}</strong><br />
-          Координаты: {{ lake.lat }}, {{ lake.lng }}
+          Temperature: {{ lake.lat }}, {{ lake.lng }}
         </LPopup>
       </LMarker>
     </LMap>
@@ -38,18 +38,19 @@ interface Lake {
   name: string
   lat: number
   lng: number
+  level: number
 }
 
-const petropavl = ref<LatLngTuple>([54.88, 69.20])
+const petropavl = ref<LatLngTuple>([54.88, 69.16])
 
 const lakes = ref<Lake[]>([
-  { name: 'Озеро Пёстрое', lat: 54.836699, lng: 69.111328 },
-  { name: 'Озеро Белое', lat: 54.927154, lng: 69.254322 },
-  { name: 'Озеро Горькое', lat: 54.947573, lng: 68.951122},
-  { name: 'Озеро Поганка', lat: 54.921205, lng: 69.053476},
-  { name: 'Озеро Дикое', lat: 54.840156, lng: 69.131957},
-  { name: 'Озеро Паганка', lat: 54.823782, lng: 69.146870},
-  { name: 'Малое Белое', lat: 54.950006, lng: 69.325277},
-  { name: 'Озеро Солёное', lat: 54.806861, lng: 69.140929},
+  { name: 'Озеро Пёстрое', lat: 54.836699, lng: 69.111328, level: 14 },
+  { name: 'Озеро Белое', lat: 54.927154, lng: 69.254322, level: 16 },
+  { name: 'Озеро Горькое', lat: 54.947573, lng: 68.951122, level: 16 },
+  { name: 'Озеро Поганка', lat: 54.921205, lng: 69.053476, level: 14 },
+  { name: 'Озеро Дикое', lat: 54.840156, lng: 69.131957, level: 15 },
+  { name: 'Озеро Паганка', lat: 54.823782, lng: 69.146870, level: 13 },
+  { name: 'Малое Белое', lat: 54.950006, lng: 69.325277, level: 19 },
+  { name: 'Озеро Солёное', lat: 54.806861, lng: 69.140929, level: 18},
 ])
 </script>
